@@ -22,8 +22,7 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico",
-              "src/favicon.png",
+              "assets/images/WeFast LogoW.png",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images",
@@ -140,8 +139,7 @@
             ],
             "assets": [
               "src/assets",
-              "src/favicon.ico",
-              "src/favicon.png",
+              "src/images/WeFast LogoW.png",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images",
