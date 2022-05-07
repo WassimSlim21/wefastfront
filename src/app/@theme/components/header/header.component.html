@@ -3,7 +3,12 @@
     <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
       <nb-icon icon="menu-2-outline"></nb-icon>
     </a>
-    <a class="logo" href="#" (click)="navigateHome()">ngx-<span>admin</span></a>
+    <a class="logo" href="#" (click)="navigateHome()">
+      <img *ngIf="currentTheme == 'default'" src="assets/images/WEfASTLOGO.png" alt="" width="80px">
+      <img *ngIf="currentTheme == 'dark'" src="assets/images/WeFast LogoW.png" alt="" width="80px">
+
+   </a>
+
   </div>
   <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
     <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>

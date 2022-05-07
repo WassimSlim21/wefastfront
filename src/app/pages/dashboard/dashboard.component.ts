@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
+import { IReportEmbedConfiguration, models, Page, Report, service, VisualDescriptor } from 'powerbi-client';
 
 interface CardSettings {
   title: string;
@@ -96,4 +97,17 @@ export class DashboardComponent implements OnDestroy {
   ngOnDestroy() {
     this.alive = false;
   }
+  // reportConfig: IReportEmbedConfiguration = {
+  //   type: 'report',
+  //   embedUrl: 'https://app.powerbi.com/reportEmbed?reportId=7a7ece7a-6623-45d9-aa9b-525f17471915',
+  //   tokenType: models.TokenType.Embed,
+  //   accessToken: 'eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLW5vcnRoLWV1cm9wZS1pLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D',
+  //   settings: undefined,
+  // };
+  // isEmbedded = false;
+
+  // reportClass = 'report-container hidden';
+  // phasedEmbeddingFlag = false;
+
+
 }
