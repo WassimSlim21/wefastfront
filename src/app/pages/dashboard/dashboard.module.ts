@@ -11,7 +11,6 @@ import {
   NbIconModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { PowerBIEmbedModule } from 'powerbi-client-angular';
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardComponent } from './status-card/status-card.component';
@@ -45,9 +44,7 @@ import { FormsModule } from '@angular/forms';
     NbListModule,
     NbIconModule,
     NbButtonModule,
-    NgxEchartsModule,
-    PowerBIEmbedModule 
-  ],
+    NgxEchartsModule  ],
   declarations: [
     DashboardComponent,
     StatusCardComponent,

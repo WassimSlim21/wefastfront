@@ -2,7 +2,6 @@ import {Component, OnDestroy} from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
-import { IReportEmbedConfiguration, models, Page, Report, service, VisualDescriptor } from 'powerbi-client';
 
 interface CardSettings {
   title: string;
