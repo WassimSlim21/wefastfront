@@ -1,20 +1,9 @@
-import { PredictionComponent } from './prediction/prediction.component';
-import { WeatherComponent } from './weather/weather.component';
-import { ResultsComponent } from './results/results.component';
-import { QualificationsComponent } from './qualifications/qualifications.component';
-import { WinsComponent } from './wins/wins.component';
-import { PitstopsComponent } from './pitstops/pitstops.component';
-import { RacesComponent } from './races/races.component';
-import { CircuitsComponent } from './circuits/circuits.component';
-import { ConstructorsComponent } from './constructors/constructors.component';
-import { DriversComponent } from "./drivers/drivers.component";
+
+
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-
 import { PagesComponent } from "./pages.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { ECommerceComponent } from "./e-commerce/e-commerce.component";
-import { NotFoundComponent } from "./miscellaneous/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -27,35 +16,40 @@ const routes: Routes = [
       },
       {
         path: "drivers",
-        component: DriversComponent,
-      },
+        loadChildren: () => import('./drivers/drivers.module')
+        .then(m => m.DriversModule),        },
       {
         path: "constructors",
-        component: ConstructorsComponent,
-      },
+        loadChildren: () => import('./constructors/constructors.module')
+        .then(m => m.ConstructorsModule),       },
       {
         path: "circuits",
-        component: CircuitsComponent,
-      },
+        loadChildren: () => import('./races/races.module')
+        .then(m => m.RacesModule), 
+            },
       {
         path: "races",
-        component: RacesComponent,
-      },
+        loadChildren: () => import('./races/races.module')
+        .then(m => m.RacesModule),        },
       {
         path: "pitStops",
-        component: PitstopsComponent,
+        loadChildren: () => import('./pitStops/pitStops.module')
+        .then(m => m.PitstopsModule),       
       },
       {
         path: "wins",
-        component: WinsComponent,
+        loadChildren: () => import('./wins/wins.module')
+        .then(m => m.WinsModule),         
       },
       {
         path: "qualifications",
-        component: QualificationsComponent,
+        loadChildren: () => import('./qualifications/qualifications.module')
+        .then(m => m.QualificationsModule),       
       },
       {
         path: "results",
-        component: ResultsComponent,
+        loadChildren: () => import('./results/results.module')
+        .then(m => m.ResultsModule),      
       },
       {
         path: "weather",
