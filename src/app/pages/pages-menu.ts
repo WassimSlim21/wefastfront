@@ -55,7 +55,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Prediction',
     icon: 'monitor-outline',
-    link: '/pages/prediction',
+    children: [
+      {
+        title: 'Points prediction',
+        link: '/pages/prediction'
+      },
+      {
+        title: 'Results prediction',
+        link: '/pages/results'
+      },
+      {
+        title: 'Wins prediction',
+        pathMatch: 'prefix',
+        link: '/pages/prediction'
+      }
+    ]
   }
   // {
   //   title: 'FEATURES',

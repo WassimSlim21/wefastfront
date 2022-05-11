@@ -1,0 +1,10 @@
+/* Point-zoom Container */
+.img-hover-zoom--point-zoom iframe {
+    transform-origin: 65% 75%;
+    transition: transform 1s, filter .5s ease-out;
+  }
+  
+  /* The Transformation */
+  .img-hover-zoom--point-zoom:hover iframe {
+    transform: scale(5);
+  }

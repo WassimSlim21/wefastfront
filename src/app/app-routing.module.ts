@@ -4,7 +4,6 @@ import {
   NbAuthComponent,
   NbLoginComponent,
   NbLogoutComponent,
-  NbRegisterComponent,
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
@@ -16,20 +15,17 @@ export const routes: Routes = [
       .then(m => m.PagesModule),
   },
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module')
+      .then(m => m.HomeModule),
+  },
+  {
     path: 'auth',
     component: NbAuthComponent,
     children: [
       {
         path: '',
         component: NbLoginComponent,
-      },
-      {
-        path: 'login',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'register',
-        component: NbRegisterComponent,
       },
       {
         path: 'logout',
@@ -46,8 +42,7 @@ export const routes: Routes = [
     ],
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
-
-  { path: '**', redirectTo: 'pages' },
+    { path: '**', redirectTo: 'pages' },
 ];
 
 const config: ExtraOptions = {

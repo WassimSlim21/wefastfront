@@ -11,7 +11,7 @@ import { ResultsComponent } from './results.component';
   ],
   imports: [
     CommonModule,
-    ResultsRoutingModule
+    ResultsRoutingModule 
   ]
 })
 export class ResultsModule { }
