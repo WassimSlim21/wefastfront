@@ -392,7 +392,6 @@ body {
   #hero .icon-box i {
     font-size: 32px;
     line-height: 1;
-    color: #fafafa;
   }
   #hero .icon-box h3 {
     font-weight: 700;
@@ -571,8 +570,8 @@ body {
   }
   .services .icon-box .icon {
     margin: 0 auto;
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
     background: #ebebeb;
     border-radius: 4px;
     display: flex;
@@ -982,6 +981,7 @@ body {
   .team .member .member-img {
     position: relative;
     overflow: hidden;
+    width: 300px;
   }
   .team .member .social {
     position: absolute;
