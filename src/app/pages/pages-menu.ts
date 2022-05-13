@@ -28,11 +28,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/races',
   },
   {
-    title: 'PitStops',
-    icon: 'speaker-outline',
-    link: '/pages/pitStops',
-  },
-  {
     title: 'Wins',
     icon: 'star',
     link: '/pages/wins',
@@ -61,14 +56,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/prediction'
       },
       {
-        title: 'Results prediction',
-        link: '/pages/results'
+        title: 'Pitstop prediction',
+        link: '/pages/pitStops'
       },
       {
-        title: 'Wins prediction',
-        pathMatch: 'prefix',
-        link: '/pages/prediction'
+        title: 'Constructor prediction',
+        link: '/pages/constructorpred'
       }
+      
+      
     ]
   }
   // {

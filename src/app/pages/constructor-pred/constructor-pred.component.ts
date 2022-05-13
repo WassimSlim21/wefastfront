@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ngx-constructors',
-  templateUrl: './constructors.component.html',
-  styleUrls: ['./constructors.component.scss']
+  selector: 'ngx-constructor-pred',
+  templateUrl: './constructor-pred.component.html',
+  styleUrls: ['./constructor-pred.component.scss']
 })
-export class ConstructorsComponent implements OnInit {
+export class ConstructorPredComponent implements OnInit {
   isShown: boolean = true ; // hidden by default
 
   constructor() { }

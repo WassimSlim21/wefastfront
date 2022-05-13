@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./races.component.scss']
 })
 export class RacesComponent implements OnInit {
+  isShown: boolean = true ; // hidden by default
 
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.isShown=false;    
+    }, 
+      3000);
   }
 
 }

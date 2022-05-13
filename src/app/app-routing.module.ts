@@ -41,8 +41,8 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-    { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', redirectTo: 'home' },
 ];
 
 const config: ExtraOptions = {

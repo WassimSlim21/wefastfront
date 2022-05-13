@@ -4,7 +4,9 @@ import { PagesComponent } from "./pages.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const routes: Routes = [
+ 
   {
+    
     path: "",
     component: PagesComponent,
     children: [
@@ -57,8 +59,11 @@ const routes: Routes = [
       {
         path: "prediction",
         loadChildren: () => import('./prediction/prediction.module')
-        .then(m => m.PredictionModule),      }
-
+        .then(m => m.PredictionModule),      },
+        {
+          path: "constructorpred",
+          loadChildren: () => import('./constructor-pred/constructor-pred.module')
+          .then(m => m.ConstructorPredModule),      }
       // },
       // {
       //   path: 'drivers',
