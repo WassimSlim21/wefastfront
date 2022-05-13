@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   isShown: boolean = true ; // hidden by default
 
-  constructor() {
+  constructor(private router:Router) {
 
    }
 
@@ -17,6 +18,9 @@ export class HomeComponent implements OnInit {
       this.isShown=false;    
     }, 
       3000);
+      if (localStorage.getItem('token')) {
+        this.router.navigate(['/pages/dashboard']);
+      }
   }
 
 }

@@ -1,8 +1,3 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -10,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
+import {JwtModuleOptions, JwtModule} from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
+
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,13 +17,17 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-
+const JWT_Module_Options: JwtModuleOptions = ({
+  config: {
+    tokenGetter: jwtTokenGetter
+  }});
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    JwtModule.forRoot(JWT_Module_Options),
     AppRoutingModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
@@ -43,4 +44,7 @@ import {
   bootstrap: [AppComponent],
 })
 export class AppModule {
+}
+export function jwtTokenGetter() {
+  return  localStorage.getItem('token');
 }
