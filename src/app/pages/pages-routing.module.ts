@@ -13,7 +13,10 @@ const routes: Routes = [
       {
         path: "dashboard",
         component: DashboardComponent,
+    
       },
+        { path: 'feedbacks', loadChildren: () => import('../feedbacks/feedbacks.module').then(m => m.FeedbacksModule) },
+
       {
         path: "drivers",
         loadChildren: () => import('./drivers/drivers.module')

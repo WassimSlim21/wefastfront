@@ -14,7 +14,7 @@ export class ConstructorsComponent implements OnInit {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+    8000);
   }
 
 }

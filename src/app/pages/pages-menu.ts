@@ -66,7 +66,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
       
       
     ]
-  }
+  },
+  {
+    title: 'Feedback',
+    icon: 'smiling-face-outline',
+    link: '/pages/feedbacks',
+  },
   // {
   //   title: 'FEATURES',
   //   group: true,

@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ApiService } from './../../../@core/service/api.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 
@@ -39,21 +41,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currentTheme = 'default';
 
   userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
-
+  
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private authService:ApiService, private router:Router) {
   }
 
   ngOnInit() {
+
    this.currentTheme = this.themeService.currentTheme;
     this.themeService.changeTheme("dark");
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.wassim);
+      .subscribe((users: any) => this.user = users.connected);
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -69,6 +73,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+
+      this.menuService.onItemClick().subscribe(( event ) => {
+        console.log(event);
+        if(event.item.title=="Log out"){
+          this.logout()
+        }
+        
+      })
   }
 
   ngOnDestroy() {
@@ -87,8 +99,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     return false;
   }
 
+  logout(): void {
+    this.authService.setLoggedOut();
+    this.router.navigate(['/home']);
+  }
   navigateHome() {
     this.menuService.navigateHome();
     return false;
   }
+  
 }

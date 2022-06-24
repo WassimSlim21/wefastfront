@@ -1,3 +1,4 @@
+import { FeedbacksModule } from './feedbacks/feedbacks.module';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -18,32 +19,9 @@ export const routes: Routes = [
       .then(m => m.LoginModule),
   },  {
     path: 'register',
-    loadChildren: () => import('./home/home.module')
-      .then(m => m.HomeModule),
+    loadChildren: () => import('./register/register.module')
+      .then(m => m.RegisterModule),
   },
-
-  // {
-  //   path: 'auth',
-  //   component: NbAuthComponent,
-  //   children: [
-  //     {
-  //       path: '',
-  //       component: NbLoginComponent,
-  //     },
-  //     {
-  //       path: 'logout',
-  //       component: NbLogoutComponent,
-  //     },
-  //     {
-  //       path: 'request-password',
-  //       component: NbRequestPasswordComponent,
-  //     },
-  //     {
-  //       path: 'reset-password',
-  //       component: NbResetPasswordComponent,
-  //     },
-  //   ],
-  // },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: 'home' },
 ];

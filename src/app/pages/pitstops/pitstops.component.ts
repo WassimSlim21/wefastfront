@@ -14,7 +14,7 @@ export class PitstopsComponent implements OnInit {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+    4000);
   }
 
 }

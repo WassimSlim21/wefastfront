@@ -14,7 +14,7 @@ export class CircuitsComponent implements OnInit {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+      12000);
   }
 
 }

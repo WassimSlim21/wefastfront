@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+    4000);
   }
 
 }

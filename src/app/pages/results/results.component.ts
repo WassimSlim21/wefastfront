@@ -17,7 +17,7 @@ export class ResultsComponent implements OnInit {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+    5000);
   }
 
 }

@@ -17,10 +17,11 @@ export class HomeComponent implements OnInit {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+    2000);
       if (localStorage.getItem('token')) {
         this.router.navigate(['/pages/dashboard']);
       }
   }
+
 
 }

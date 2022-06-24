@@ -22,7 +22,7 @@ export class ApiService {
 
 /* -------Create new account -------- */
 public register(user: object) {
-  return this.http.post(this.apiUrl + 'account/register', user, {
+  return this.http.post(this.apiUrl + 'users/register', user, {
     headers: new HttpHeaders({
          'Content-Type':  'application/json',
        })

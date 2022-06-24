@@ -7,7 +7,8 @@ import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import {JwtModuleOptions, JwtModule} from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
-
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -27,6 +28,8 @@ const JWT_Module_Options: JwtModuleOptions = ({
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    CommonModule,
+    ToastrModule,
     JwtModule.forRoot(JWT_Module_Options),
     AppRoutingModule,
     NbSidebarModule.forRoot(),
@@ -34,8 +37,10 @@ const JWT_Module_Options: JwtModuleOptions = ({
     NbDatepickerModule.forRoot(),
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
+    ToastrModule.forRoot(), // ToastrModule added
     NbToastrModule.forRoot(),
     NbChatModule.forRoot({
+      
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),

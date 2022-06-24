@@ -9,16 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   isShown: boolean = true ; // hidden by default
-  private credential = {userName: '', password : ''};
   userName: string;
   password: string;
   constructor(private authService: ApiService,private router: Router) { }
 
+
+
+  
   ngOnInit(): void {
     setTimeout(()=>{
       this.isShown=false;    
     }, 
-      3000);
+      2000);
       if (localStorage.getItem('token')) {
         this.router.navigate(['/pages/dashboard']);
       }
